@@ -1,12 +1,12 @@
-var https require https;
-const express = require express;
+var express = require('express');
+var app = express();
+var path = require('path');
 
-app = express();
-
-app.get('/',(req,res){
-    res.send('Hello World!')
-})
-
-app.listen(3000,()=>{
-    console.log(Sample app listening on port 3000);
-})
+// viewed at http://localhost:8080
+app.get('/', function(req, res) {
+    res.sendFile(path.join(__dirname + '/index.html'));
+});
+console.log('hello');
+app.listen(8080, function(){
+    console.log('Listening on post 8080');
+});
